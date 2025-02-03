@@ -15,4 +15,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build and test with Maven
-        run: mvn -B -T 4 -Dmaven.source.skip=true -Dmaven.test.skip=false test
+        run: ./mvnw -B -T 4 -Dmaven.source.skip=true -Dmaven.test.skip=false test
