@@ -84,7 +84,11 @@ DROP TABLE IF EXISTS `banned_mac`;
 CREATE TABLE `banned_mac` (
   `uniId` int NOT NULL AUTO_INCREMENT,
   `address` varchar(20) NOT NULL,
+<<<<<<< HEAD
   `time` timestamp NOT NULL,
+=======
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+>>>>>>> ed844bbf4 (fix(sql): remove invalid timestamp default value format)
   `details` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`uniId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -115,7 +119,7 @@ DROP TABLE IF EXISTS `banned_hdd`;
 CREATE TABLE `banned_hdd` (
 	`id` int NOT NULL AUTO_INCREMENT,
   `serial` varchar(100) NOT NULL,
-  `time` timestamp NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
