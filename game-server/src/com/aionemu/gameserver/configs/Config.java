@@ -63,6 +63,8 @@ public class Config {
 				throw new GameServerError("No IP for Aion client advertisement configured and local IP discovery failed. Please configure gameserver.network.client.connect_address");
 			NetworkConfig.CLIENT_CONNECT_ADDRESS = new InetSocketAddress(localIPv4, NetworkConfig.CLIENT_CONNECT_ADDRESS.getPort());
 			LoggerFactory.getLogger(Config.class).info("No IP for Aion client advertisement configured, using " + localIPv4.getHostAddress());
+		} else {
+			LoggerFactory.getLogger(Config.class).info("IP for Aion client advertisement configured, using " + NetworkConfig.CLIENT_CONNECT_ADDRESS.getAddress().getHostAddress());
 		}
 	}
 
